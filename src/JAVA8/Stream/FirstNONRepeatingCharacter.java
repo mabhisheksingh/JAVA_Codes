@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 
 public class FirstNONRepeatingCharacter {
     public static void main(String[] args) {
-        String list= "aaffvtff";
+        String list= "aaffVtffv";
         findNoNrepeatingChar(list);
     }
 
@@ -33,6 +33,14 @@ public class FirstNONRepeatingCharacter {
 //                .map(entry -> entry.getKey())
 //                .findFirst().get();
         System.out.println("Result :"+ch);
+
+        ch = input.chars()
+                .mapToObj(character -> String.valueOf(character).toLowerCase())
+                .collect(Collectors.groupingBy(Function.identity(),LinkedHashMap::new,Collectors.counting()))
+                .entrySet().stream()
+                .filter(entry -> entry.getValue() == 1L)
+                .findFirst().get();
+        System.out.println("Result : "+(char)ch);
 
 
 

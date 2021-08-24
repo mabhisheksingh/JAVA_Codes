@@ -1,6 +1,7 @@
 package BasicConcepts.thread;
 
 import com.sun.source.tree.SynchronizedTree;
+import lombok.Synchronized;
 
 public class PrintEvenoddWithTheHelpOfTwoThread {
     int counter =1;
@@ -10,15 +11,17 @@ public class PrintEvenoddWithTheHelpOfTwoThread {
         Thread t1 = new Thread(new Runnable() {
             @Override
             public void run() {
-                r1.odd();
+                //r1.odd();
+                r1.printEven();
             }
-        });
+        },"Thread-1");
         Thread t2 = new Thread(new Runnable() {
             @Override
             public void run() {
-                r1.even();
+               // r1.even();
+                r1.printOdd();
             }
-        });
+        },"Thread-2");
         t1.start();
         t2.start();
 
@@ -29,7 +32,7 @@ public class PrintEvenoddWithTheHelpOfTwoThread {
             while(counter < N){
                 while(counter%2!=0) {
                     try{
-                        System.out.println("even .. wait()");
+                        //System.out.println("even .. wait()");
                         wait();
                     }catch (Exception e){
                         e.printStackTrace();
@@ -46,7 +49,7 @@ public class PrintEvenoddWithTheHelpOfTwoThread {
             while(counter < N){
                 while(counter%2==0) {
                     try{
-                        System.out.println("odd .. wait()");
+                        //System.out.println("odd .. wait()");
                         wait();
                     }catch (Exception e){
                         e.printStackTrace();
@@ -60,51 +63,39 @@ public class PrintEvenoddWithTheHelpOfTwoThread {
 
 
     }
-}
 
-/*
-Showing issue was in thread not saved means
-package BasicConcepts.thread;
-class Even {
-    public void even() {
-        for (int i=0;i<20;i++){
-            if(i%2==0) {
-                System.out.println("EVEN "+i);
+    private void printEven(){
+        synchronized (this){
+            while(counter< N){
+                if(counter%2!=0){
+                   try{
+                       wait();
+                   }catch (Exception e){
+                       e.printStackTrace();
+                   }
+                }
+                System.out.println("Thread name : "+Thread.currentThread()+" "+counter);
+                counter++;
+               notify();
             }
         }
-
     }
-}
 
-class Odd {
-    public void odd() {
-        for (int i=0;i<20;i++){
-            if(i%2!=0) {
-                System.out.println("ODD " +i);
+    private void printOdd(){
+        synchronized (this){
+            while(counter< N){
+                if(counter%2==0){
+                    try{
+                        wait();
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
+                }
+                System.out.println("Thread name : "+Thread.currentThread()+" "+counter);
+                counter++;
+                notify();
             }
         }
-
     }
-}
-public class PrintEvenoddWithTheHelpOfTwoThread {
-    public static void main(String[] args) {
-        Even r1 = new Even();
-        Odd r2 = new Odd();
-        Thread t1 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                r1.even();
-            }
-        });
-        Thread t2 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                r2.odd();
-            }
-        });
-        t1.start();
-        t2.start();
 
-    }
 }
-*/

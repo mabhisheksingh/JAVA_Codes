@@ -1,4 +1,4 @@
-package base64;
+package JAVA8.base64;
 
 import java.io.*;
 import java.util.Base64;
@@ -17,7 +17,7 @@ public class example1 {
         System.out.println("Encode Img : "+encoded);
         try {
             bytes=Base64.getDecoder().decode(encoded);
-            FileOutputStream fw=new FileOutputStream("C:\\Users\\abhis\\IdeaProjects\\untitled1\\src\\base64\\txt.png");
+            FileOutputStream fw=new FileOutputStream("C:\\Users\\abhis\\IdeaProjects\\untitled1\\src\\JAVA8.base64\\txt.png");
             fw.write(bytes);
             fw.close();
         }catch (Exception e){
@@ -26,7 +26,7 @@ public class example1 {
     }
 
     public static void main(String[] args) {
-        File file=new File("C:\\Users\\abhis\\IdeaProjects\\untitled1\\src\\base64\\img.png");
+        File file=new File("C:\\Users\\abhis\\IdeaProjects\\untitled1\\src\\JAVA8.base64\\img.png");
         FileInputStream fio=null;
         try {
             fio=new FileInputStream(file.getAbsolutePath());

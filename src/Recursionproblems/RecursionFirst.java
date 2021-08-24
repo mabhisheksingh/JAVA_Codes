@@ -1,7 +1,5 @@
 package Recursionproblems;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.util.HashMap;
 
 public class RecursionFirst {
@@ -13,7 +11,7 @@ public class RecursionFirst {
         System.out.println("String WO duplicate :"+hash);
     }
     //remove dublicate char from string
-    private static @NotNull
+    private static
     HashMap<String, String> removeDuplicateChar(String str, HashMap<String, String> hash) {
       //  HashMap<String, String> hashMap;
         if (str.length() == 1) {

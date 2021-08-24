@@ -3,8 +3,6 @@ package JAVA8.Stream;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 public class FirstNONRepeatingCharacter {
     public static void main(String[] args) {
@@ -24,25 +22,15 @@ public class FirstNONRepeatingCharacter {
         System.out.println("Result :"+result ) ;
 
 
-        Object ch = input.codePoints()
-                .mapToObj(x -> Character.valueOf((char) x ))
+
+
+        Object ch = input.chars()
+                .mapToObj(cha -> Character.toLowerCase((char)cha))
                 .collect(Collectors.groupingBy(Function.identity(),LinkedHashMap::new,Collectors.counting()))
-                .entrySet().stream()
-                .filter(entry -> entry.getValue()==1L)  //.collect(Collectors.toList());
+                .entrySet()
+                .stream().filter(entry -> entry.getValue() == 1L)
                 .findFirst().get();
-//                .map(entry -> entry.getKey())
-//                .findFirst().get();
         System.out.println("Result :"+ch);
-
-        ch = input.chars()
-                .mapToObj(character -> String.valueOf(character).toLowerCase())
-                .collect(Collectors.groupingBy(Function.identity(),LinkedHashMap::new,Collectors.counting()))
-                .entrySet().stream()
-                .filter(entry -> entry.getValue() == 1L)
-                .findFirst().get();
-        System.out.println("Result : "+(char)ch);
-
-
 
 
     }

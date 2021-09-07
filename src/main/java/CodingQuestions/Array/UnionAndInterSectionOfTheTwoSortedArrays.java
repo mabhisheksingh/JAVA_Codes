@@ -3,78 +3,43 @@ package CodingQuestions.Array;
 public class UnionAndInterSectionOfTheTwoSortedArrays {
     public static void main(String[] args) {
         int [] a = {1, 2, 3 ,4 ,5};
-        int [] b = {1, 2, 3};
-        System.out.println("Do union : "+doUnion(a,5,b,3));
-        System.out.println("Do Intersection : "+doIntersection(a,5,b,3));
+        int [] b = {1,4, 5, 6};
+        System.out.println("**********Do union : ************");
+        doUnion(a,5,b,4);
+        System.out.println("************Do Intersection : ***********");
+        doIntersection(a,5,b,4);
     }
-    private static boolean BST(int arr[] ,int arrSize,int target){
-        int low =  0;
-        int high = arrSize-1;
-        if(arrSize==0)return false;
-        else if(arrSize==1 ) return  (arr[0]==target)?true:false;
-        else if(arrSize == 2 ) return (arr[0]== target || arr[1] == target)?true:false;
-        while (low<high){
-            int mid = low + (high-low)/2;
-            if(arr[mid] == target)
-                return true;
-            else if ( ( mid==0 || target < arr[mid] ) )
-                high= mid;
-            else
-                low = mid+1;
-        }
-        if(arr[low] == target|| arr[high]==target) return true;
-        return false;
-    }
-
-    public static int doUnion(int a[], int n, int b[], int m) {
-        //Your code here
-        int match = 0;
-        int unmatch =0;
-        int max= 0;
-        if(n <= m){
-            max = m;
-            for (int i = 0; i < n; i++) {
-               // System.out.println(" target "+a[i]+" Status "+BST(b,m,a[i]));
-                if(BST(b,m,a[i])){
-                    match++;
-                }else unmatch ++;
-            }
-        }else {
-            max  = n;
-            for (int i = 0; i < m; i++) {
-                //System.out.println(" target "+a[i]+" Status "+BST(b,m,a[i]));
-                if(BST(a,n,b[i])){
-                    match++;
-                }else unmatch ++;
+    public static void doUnion(int[] a, int n, int[] b, int m) {
+        int a1=0,b1=0;
+        while(a1< n && b1 < m){
+            if(a[a1] < b[b1]){
+                System.out.println(a[a1++]);
+            }else if( b[b1]<a[a1]){
+                System.out.println(b[b1++]);
+            }else{
+                System.out.println(b[b1++]);
+                a1++;
             }
         }
-        //System.out.println("Match "+match+" UNMATCH "+unmatch +" MAX "+max);
-        return match+unmatch + ( max- match);
+        for (int i = a1; i < n; i++) {
+            System.out.println(a[i]);
+        }
+        for (int i = b1; i < m; i++) {
+            System.out.println(b[i]);
+        }
     }
 
-    public static int doIntersection(int a[], int n, int b[], int m) {
-        //Your code here
-        int match = 0;
-        int unmatch =0;
-        int max= 0;
-        if(n <= m){
-            max = m;
-            for (int i = 0; i < n; i++) {
-                //System.out.println(" target "+a[i]+" Status "+BST(b,m,a[i]));
-                if(BST(b,m,a[i])){
-                    match++;
-                }else unmatch ++;
-            }
-        }else {
-            max  = n;
-            for (int i = 0; i < m; i++) {
-               // System.out.println(" target "+a[i]+" Status "+BST(b,m,a[i]));
-                if(BST(a,n,b[i])){
-                    match++;
-                }else unmatch ++;
+    public static void doIntersection(int[] a, int n, int[] b, int m) {
+        int a1=0,b1=0;
+        while(a1< n && b1 < m){
+            if(a[a1] < b[b1]  ){
+                a1++;
+            }else if( b[b1]<a[a1]){
+                b1++;
+            }else{
+                System.out.println(b[b1++]);
+                a1++;
             }
         }
-        //System.out.println("Match "+match+" UNMATCH "+unmatch +" MAX "+max);
-        return match;
     }
 }

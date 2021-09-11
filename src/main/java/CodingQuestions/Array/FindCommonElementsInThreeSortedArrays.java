@@ -30,7 +30,7 @@ public class FindCommonElementsInThreeSortedArrays {
             else if( ar2[a2] < ar1[a1] && ar2[a2] < ar3[a3] ) a2++;
             else if( ar3[a3] < ar1[a1] && ar3[a3] < ar2[a2] ) a3++;
             else{
-                System.out.println(ar1[a1++]);
+                System.out.print(ar1[a1++]+" ");
                 a2++;a3++;
             }
         }

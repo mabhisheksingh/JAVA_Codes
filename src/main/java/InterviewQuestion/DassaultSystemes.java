@@ -60,14 +60,21 @@ public class DassaultSystemes {
         //B(null); //throw exception
         //if we use only exception and one child exception overload then it did not throw any exception but
         // if we use two child exception then it throw compiler time error
+
         HashMap m = new HashMap();
         Object o1 = new Object();
         Object o2 = o1;
         m.put(o1,1);
         m.put(o2,2);
-        System.out.println("H "+ m +" size "+ m.size());
+        //System.out.println("H "+ m +" size "+ m.size());
 
+
+        //String pool concept and Volatile in java
+        String s1 = new String("d"); // create 2 Obj
+        //one object in heap and other in SCP in heap
+        String s2 = "AA"; //create Single in SCP
+        System.out.println(s1.isEmpty());
     }
-    //String pool concept and Volatile in java
+
 
 }

@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.medium;
 /*
 Symbol       Value
 I             1

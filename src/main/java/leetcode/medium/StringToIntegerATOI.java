@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.medium;
 
 /*
 * The algorithm for myAtoi(string s) is as follows:

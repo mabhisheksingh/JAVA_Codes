@@ -7,6 +7,7 @@ import lombok.ToString;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 @Data
@@ -20,8 +21,9 @@ public class Employee {
     private Integer empSalary;
     private List<String> empPhoneNumber;
 
+
     public  static List<Employee> getEmployeeData(){
-        List<Employee> employees= new ArrayList<Employee>();
+        List<Employee> employees= new ArrayList<>();
         employees.add( new Employee(100,"Abhishek Singh",24,240000, Arrays.asList("7271058852","7905840761")) );
         employees.add( new Employee(101,"Shivam Singh",25,24000, Arrays.asList("7271058853","7905840762")) );
         employees.add( new Employee(108,"Ashish Singh",26,2400, Arrays.asList("7271058882","7905840961")) );
@@ -34,4 +36,5 @@ public class Employee {
 
         return employees;
     }
+
 }

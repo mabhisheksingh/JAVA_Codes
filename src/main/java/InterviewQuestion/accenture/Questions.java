@@ -15,7 +15,7 @@ public class Questions {
         String a = "India";
         String b = new String("India");
         String c = "A";
-        //System.out.println(a.hashCode() == b.hashCode());
+        System.out.println(a.hashCode()  +" "+ b.hashCode());
         //System.out.println(b.hashCode() == c.hashCode());
         //System.out.println(a.hashCode() == c.hashCode());
 

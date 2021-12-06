@@ -8,12 +8,12 @@ public final class SinglyLinkedList {
         this.data =data;
         this.next = null;
     }
-
+// 3,3,4 pus(5);--> 5,3,3,4
     /* Inserts a new Node at the front of the list. */
     public SinglyLinkedList pushInFront(int new_data, SinglyLinkedList head){
         System.out.println("new node pushed successfully :"+new_data);
-        SinglyLinkedList new_singlyLinkedList = new SinglyLinkedList(new_data);
-        SinglyLinkedList temp = head;
+        SinglyLinkedList new_singlyLinkedList = new SinglyLinkedList(new_data); //500
+        //SinglyLinkedList temp = head; //1000
         new_singlyLinkedList.next = head;
 
         //System.out.println(temp.data+" teamp next "+temp.next+" head "+head.data+" head "+head + " nexxt "+head.next);

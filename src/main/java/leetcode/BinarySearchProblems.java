@@ -85,7 +85,7 @@ public class BinarySearchProblems {
     private static int findMaximumElementIndex(int[] nums) {
         int low = 0;
         int high = nums.length-1;
-        int mid =0;
+        int mid;
         if(high == low ) return low;
         while(low!=high){
             mid = (int)Math.ceil((low+high)/2);

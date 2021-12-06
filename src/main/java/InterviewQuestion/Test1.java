@@ -12,6 +12,9 @@ public class Test1 {
        list.add("Abi");
        list.add("ABBB");
        list.add("SSSS");
+       list.add("SSSS");
+        list.add(new String("SSSS"));
+        System.out.println(list.size());
        Iterator<String> it =  list.iterator();
        while (it.hasNext()){
            System.out.println(it.next());

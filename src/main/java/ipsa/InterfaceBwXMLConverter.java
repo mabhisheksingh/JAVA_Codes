@@ -1,5 +1,7 @@
 package ipsa;
 
+import java.util.Locale;
+
 public class InterfaceBwXMLConverter {
 
 
@@ -9,7 +11,8 @@ public class InterfaceBwXMLConverter {
         // String str = "Gigabitethernet1-2/2";
         //   System.out.println("N : "+ str);
         //String str= "1-2-3.1223";
-        interfaceCorrectForAlactel(str);
+
+        bandwidthConvertInK("100m");
     }
 
     //Convert Interface in Alcatel format
@@ -50,5 +53,13 @@ public class InterfaceBwXMLConverter {
             }
         }
         System.out.println("New Correct formate : "+str);
+    }
+
+    private static void bandwidthConvertInK(String bandwidth){
+        bandwidth = bandwidth.toLowerCase(Locale.ROOT);
+        if(bandwidth.contains("m")){
+            bandwidth = bandwidth.replace("m","000");
+        }
+        System.out.println("bandwidth : "+bandwidth);
     }
 }

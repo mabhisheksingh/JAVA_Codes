@@ -32,4 +32,11 @@ public class CountandSay {
 
         return output;
     }
+
+    private static String countAndSay(int n,int j) {
+        if (n == 1) {
+            return "1";
+        }
+        return say( countAndSay(n-1) );
+    }
 }

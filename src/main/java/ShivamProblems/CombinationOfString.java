@@ -13,6 +13,6 @@ public class CombinationOfString {
             return;
         }
         printAllCombination(input,str.substring(0 ,str.length() -1 )) ;
-        printAllCombination(input+str.charAt(str.length() -1),str.substring(0 ,str.length() -1 )) ;
+        printAllCombination(str.charAt(str.length() -1)+input,str.substring(0 ,str.length() -1 )) ;
     }
 }

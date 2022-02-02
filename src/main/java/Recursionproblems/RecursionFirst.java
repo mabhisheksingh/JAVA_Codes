@@ -1,10 +1,12 @@
 package Recursionproblems;
 
 import java.util.HashMap;
+import java.util.Locale;
 
 public class RecursionFirst {
     public static void main(String[] args) {
-        String str ="aabacaaaaacccccceeeeff";
+        String str ="Anandita";//"aabacaaaaacccccceeeeff";
+        str = str.toLowerCase();
         HashMap<String,String> hash = new HashMap<String,String>();
         System.out.println("String W duplicate :"+str);
         removeDuplicateChar(str,hash);

@@ -15,7 +15,6 @@ Output: "blue is sky the"
         for (int i = str.length-1; i >=0; i--) {
             output=output.trim()+" "+str[i].trim();
         }
-        System.out.println("output : "+output);
         return output.trim();
     }
 }

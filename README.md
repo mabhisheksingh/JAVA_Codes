@@ -1,3 +1,3 @@
 # JAVA_Codes
 
-in this project their is DS and algo Code solution provided in JAVA
+In this project their are various DS and algo Code solution was provided in JAVA

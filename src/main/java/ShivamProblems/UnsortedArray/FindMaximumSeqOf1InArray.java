@@ -3,8 +3,8 @@ package ShivamProblems.UnsortedArray;
 public class FindMaximumSeqOf1InArray {
     public static void main(String[] args) {
        // int []arr = {1,1,1,1,1,1,0,1,0,1,1,0,1,1,1,1,1,0,1};
-        //int []arr = {1,1,1,1,0,1,0,1,1,0,1,1,1,1,1,0,1};
-        int arr[] = {0,0,0,0};
+        int []arr = {1,1,1,1,0,1,0,1,1,0,1,1,1,1,1,0,1};
+        ///int arr[] = {0,0,0,0};
         System.out.println("max Seq : "+findmaxseqlenOptimize(arr));
     }
 

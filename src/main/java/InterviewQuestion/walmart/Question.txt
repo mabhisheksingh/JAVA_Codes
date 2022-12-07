@@ -1,0 +1,170 @@
+			-> given a binary tree, create a new tree which node values are sum of all nodes value represented by that node sub tree. [5]
+             -> clone a binary tree [5]
+             -> given a linked list -> 1 -> 2 -> 3 -> 4 -> null { 1 - 2 + 3 - 4}... [3]
+             -> given a linked list, delete a given node by ref. [3]
+             -> given a metrix do spiral traversal of it [5]
+
+
+
+              1                            10
+          3       4         ->         8       5
+
+       5       -1    2               5       -1   2
+
+
+
+       1 -> 2 -> 3 -> 4 -> -10 -> null                 1 - 2 + 3 - 4 -(-10)  = 8
+
+
+
+
+
+        1   2   5  6
+        3   4   7  9     -> 1 2 5 6 9 11 10 7 10 3 4 7
+        10  7   10 11
+
+        //Solution
+        -> given a linked list -> 1 -> 2 -> 3 -> -4 -> null { 1 - 2 + 3 - -4}... [3]
+
+        public static int calculateLinkedList(Node linkedList){
+          int output =0;
+          Node node = linkedList;
+          int flag = 1; //odd for + and even for -ve
+          while( node != null){
+          	if( flag % 2 !=0 ){
+            	output = output + node.val;
+            }else{
+            	output = output - node.val;
+            }
+            flag++ ;
+            node = node.next;
+          }
+
+
+
+          return output;
+
+        }
+        public static int calculateLinkedList(Node linkedList, int r){
+          int output =0;
+          Node node = linkedList;
+          int flag = 1; //odd for + and even for -ve
+          while( node != null){
+          	if( flag % 2 !=0 ){
+            	output = output + node.val;
+            }else{
+            	output = output - node.val;
+            }
+            flag++ ;
+            node = node.next;
+          }
+
+
+
+          return output;
+
+        }
+
+
+        class ObjectSingleton{
+        	private static ObjectSingleton  objectSingleton= null;
+
+          public static ObjectSingleton getObejct(){
+          	if( objectSingleton == null){
+            Synchronied(ObjectSingleton.class){
+            	if( objectSingleton == null ){
+              	objectSingleton =  new ObjectSingleton();
+              }
+            }
+
+            }
+          }
+          return objectSingleton;
+        }
+      }
+
+      //implement hashcode and equals
+      class Student(){
+
+      	String email ;
+        String name ;
+
+        Student( String email, String name){
+        	email = email;
+          name = name;
+        }
+
+
+        public boolean equals( Object obj){
+        	if( !(instanceof this == obj )) return false;
+          else{
+          	if( this.email..equals( obj.email ) &&  this.name.equals(obj.name) ) return true;
+            else false;
+          }
+        }
+
+        public int hashCode(){
+        	int hashcode = 0;
+          hashcode  = gethashCode(this);
+          return hashcode;
+        }
+      }
+
+      class testing {
+
+        psvm(String)
+
+      }
+
+
+
+      //developed future ready calculator
+      interface Operation{
+      	public int calc( int a, int b);
+
+      }
+
+      class Add() implement operation{
+      	public  int calc( int a ,int b){ return a+b}
+      }
+      class Sub() implement operation{
+      	public  int calc( int a ,int b){ return a+b}
+      }
+
+      class Calculator{
+        Calculator(){}
+        public static excute( String expression){
+        String str[] = expression.split(" ");
+        	int firstArgument = str[0];
+          int secondArgument = str[2];
+          String operator = str[1];
+          Operator.calculate(firstArgument ,secondArgument, operator )
+        }
+      }
+
+      //
+      1 + 1  //String
+      1 - 1
+      1 * 1
+
+
+      class test{
+
+      public void addtest(){
+      	String expression = "1 + 1";
+        Calculator cal = new Calculator();
+        assertEquals( 2 , cal.excute( expression  ) );
+       }
+       public void addtest(){
+      	String expression = "1 + 1";
+        Calculator cal = new Calculator();
+        assertEquals( 2 ,cal.excute( expression  ) );
+       }
+       public void addtest(){
+      	String expression = "1 + 1";
+        Calculator cal = new Calculator();
+        assertEquals( 2 ,cal.excute( expression  ) );
+       }
+
+      }
+

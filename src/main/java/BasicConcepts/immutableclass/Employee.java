@@ -39,6 +39,7 @@ public final class Employee {
                 new Employee(1,"Abhishek",new Deparment(2,"Dev"),Arrays.asList("77","88"));
         System.out.println(emp);
         emp.getDeparment().deparmentName="ABC";
+        System.out.println(emp.getDeparment().deparmentName);
         System.out.println(emp);
 
 

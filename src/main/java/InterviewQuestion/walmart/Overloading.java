@@ -1,4 +1,4 @@
-package InterviewQuestion.wallmart;
+package InterviewQuestion.walmart;
 
 public class Overloading {
     static int x =0;

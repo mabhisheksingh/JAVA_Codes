@@ -18,20 +18,18 @@ public class LetterCombinationsPhoneNumberTestCase {
 
 //    Input: digits = "23"
 //    Output: ["ad","ae","af","bd","be","bf","cd","ce","cf"]
-//    "234"
-//    ["adg","adh","adi","aeg","aeh","aei","afg","afh","afi","bdg","bdh","bdi","beg","beh","bei","bfg","bfh","bfi",
+//    Input: digits ="234"
+//    Output: ["adg","adh","adi","aeg","aeh","aei","afg","afh","afi","bdg","bdh","bdi","beg","beh","bei","bfg","bfh","bfi",
 //    "cdg","cdh","cdi","ceg","ceh","cei","cfg","cfh","cfi"]
-
     @Test
-    public void squareTest() {
-        Assert.assertEquals(25, 25);
+    public  void emptyLetterCombinationsTest() {
+        List<String> expectedList = Arrays.asList( );
+        Assert.assertEquals( letterCombinations(""),expectedList );
     }
 
     @Test
     public  void letterCombinationsTest() {
-        List<String> expectedlist1 = Arrays.asList("ad","ae","af","bd","be","bf","cd","ce","cf" );
-        List<String> expectedlist2 = Arrays.asList( );
-        Assert.assertEquals( letterCombinations("23"), expectedlist1 );
-        Assert.assertEquals( letterCombinations(""),expectedlist2 );
+        List<String> expectedList = Arrays.asList("ad","ae","af","bd","be","bf","cd","ce","cf" );
+        Assert.assertEquals( letterCombinations("23"), expectedList );
     }
 }

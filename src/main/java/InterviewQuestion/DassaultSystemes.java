@@ -53,12 +53,10 @@ public class DassaultSystemes {
     public static void temp4(){
         final String str = "AA";
     }
-
-
     public static void main(String[] args) {
-       // A(null); throw exception
-        //B(null); //throw exception
-        //if we use only exception and one child exception overload then it did not throw any exception but
+//        A(null); //throw exception
+//        B(null); //throw exception
+//        if we use only exception and one child exception overload then it did not throw any exception but
         // if we use two child exception then it throw compiler time error
 
         HashMap m = new HashMap();

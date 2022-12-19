@@ -12,10 +12,8 @@ class A {
                     obj = new A();
                 }
             }
-
             return obj;
         }
-
         return obj;
     }
 }

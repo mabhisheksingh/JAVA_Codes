@@ -10,8 +10,6 @@ public class NQueen {
     private static final int N = 5;
     private final HashMap<Integer, Boolean> hashMap = new HashMap();
 
-    static final ArrayList< ArrayList<ArrayList<String>> > ARRAY_LIST  = new ArrayList<>();
-
     public static void main(String[] args) {
         NQueen Queen = new NQueen();
         Queen.solveNQ();
@@ -29,7 +27,7 @@ public class NQueen {
 //            printMatrix(matrix);
 //        }
         System.out.println("--------------OUTPUT----------------");
-        System.out.println(ARRAY_LIST);
+        System.out.println(output);
         System.out.println("--------------SIZE----------------");
         System.out.println("SIZE :"+ output.size());
 

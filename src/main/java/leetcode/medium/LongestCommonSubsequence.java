@@ -8,7 +8,7 @@ public class LongestCommonSubsequence {
 
     public static void main(String[] args) {
 //        int output = new LongestCommonSubsequence().longestCommonSubsequence("abcde","ace");
-        int output = new LongestCommonSubsequence().longestCommonSubsequence("abc","abc");
+        int output = new LongestCommonSubsequence().longestCommonSubsequence("babad","dabab");
 //        int output = new LongestCommonSubsequence().longestCommonSubsequence("abc","def");
         System.out.println("OUTPUT: "+output);
     }

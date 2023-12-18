@@ -1,0 +1,1 @@
+Add Some medium level design question based in hashmap treeSet and Priority Queue.
